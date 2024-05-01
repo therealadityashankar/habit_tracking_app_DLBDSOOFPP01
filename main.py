@@ -1,14 +1,21 @@
 import src.data as data
 import src.prompts as prompts
 import src.util as util
+import src.ascii_art as ascii_art
 import os
+import random
 
 def main():
+    # let the test code be triggered if the test mode is on
     if os.path.exists(".testmode"):
         util.TEST_MODE = True
         util.TEST_CURRENT_DATE = util.ask_current_date()
 
     print(prompts.INTRO)
+
+    # print an ascii image
+    ascii_images = [ascii_art.ascii_bear, ascii_art.ascii_cat, ascii_art.ascii_dog, ascii_art.ascii_dolphin, ascii_art.ascii_fish]
+    print(random.choice([ascii_images])[0])
 
     habits_and_streaks = data.load_all_data() # load all json data
 

@@ -140,11 +140,6 @@ def mock_input(all_test_values : list[str]):
         test_value = all_test_values[occurance_num]
         occurance_num += 1
 
-        # Open the file in append mode. If the file doesn't exist, it will be created.
-        with open("xyz.txt", "a") as file:
-            # Write a new line containing 'abc' to the file.
-            file.write("\n" + test_value)
-
         return test_value
     
     return real_mock_input
