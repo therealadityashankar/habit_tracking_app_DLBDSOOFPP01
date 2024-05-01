@@ -3,6 +3,8 @@ This is a display of a sample habit tracking application
 
 ![Person pointing at a calender](/calender_person.jpg)
 
+<a href="https://www.freepik.com/free-vector/businessman-planning-events-deadlines-agenda_9174355.htm#query=calendar&position=4&from_view=keyword&track=sph&uuid=3c0863b5-bee6-4321-9aeb-f802fa596d71">Image by pch.vector</a> on Freepik
+
 ## Installation and setup
 
 This code requires the installation of python 3.11.5 or later, 
