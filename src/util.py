@@ -97,7 +97,6 @@ def pretty_print_habits_and_analytics(habits : list[tuple[Habit, list[Streak]]])
                 num_weeks = streaks[-1].num_streak_weeks
                 print(f"   weeks complete : {num_weeks} week{'s' if num_weeks > 1 else ''}")
 
-                ## TODO : last marked for this week
                 # if the streak was last marked the last day
                 # of last week, the streak goes on
                 last_week_end = first_day_of_week(get_current_date()) - datetime.timedelta(days=1)
@@ -342,12 +341,12 @@ def get_habit_analytics(habit : Habit, streaks : list[Streak]) -> HabitAnalytics
         current_streak = streaks[-1]
 
         for streak in streaks:
-            if current_streak.num_streak_days >= longest_streak_days:
+            if streak.num_streak_days >= longest_streak_days:
                 longest_streak = streak
-                longest_streak_days = current_streak.num_streak_days
+                longest_streak_days = streak.num_streak_days
     else:
         current_streak = None
-        
+    
     if len(streaks) > 0:
         return HabitAnalytics(current_streak, longest_streak.start_date, longest_streak.end_date)
     else:

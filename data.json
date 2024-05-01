@@ -63,7 +63,12 @@
     "Feeding the Dog 3x a Day": {
       "description": "feed andi three times a day",
       "periodicity": "daily",
-      "streaks": []
+      "streaks": [
+        {
+          "start_date": "2024-04-25",
+          "end_date": "2024-04-25"
+        }
+      ]
     },
     "Visit the neighbour and talk to them": {
       "description": "just visit hannah for a bit, and say hi",
@@ -72,6 +77,21 @@
         {
           "start_date": "2024-04-22",
           "end_date": "2024-04-28"
+        }
+      ]
+    },
+    "Example Brushing Teeth": {
+      "description": "Example Brushing Teeth (nice)",
+      "periodicity": "daily",
+      "streaks": []
+    },
+    "Example habit rename": {
+      "description": "Example habit description",
+      "periodicity": "daily",
+      "streaks": [
+        {
+          "start_date": "2024-04-24",
+          "end_date": "2024-04-24"
         }
       ]
     }
