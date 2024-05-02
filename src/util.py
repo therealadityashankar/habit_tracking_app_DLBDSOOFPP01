@@ -367,6 +367,7 @@ def mark_habit_as_complete(habits_and_streaks : list[tuple[Habit, list[Streak]]]
         if habit.periodicty == "daily":
             streaks.append(Streak(habit, get_current_date(), get_current_date()))
         else:
+            last_week_end = first_day_of_week(get_current_date()) - datetime.timedelta(days=1)
             this_week_start = first_day_of_week(get_current_date())
             this_week_end = last_week_end + datetime.timedelta(days=7)
             streaks.append(Streak(habit, this_week_start, this_week_end))

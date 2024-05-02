@@ -1,94 +1,74 @@
 {
   "habits": {
-    "Watering Plants": {
-      "description": "Watering Plants in the front garden in the morning",
-      "periodicity": "daily",
-      "streaks": [
-        {
-          "start_date": "2024-04-23",
-          "end_date": "2024-04-24"
-        }
-      ]
-    },
-    "Brushing Teeth": {
-      "description": "Brushing teeth in the morning",
-      "periodicity": "daily",
-      "streaks": [
-        {
-          "start_date": "2024-04-20",
-          "end_date": "2024-04-24"
-        }
-      ]
-    },
-    "Making the bed": {
-      "description": "Making the bed in the morning",
-      "periodicity": "daily",
-      "streaks": [
-        {
-          "start_date": "2024-04-20",
-          "end_date": "2024-04-24"
-        }
-      ]
-    },
-    "Cleaning the room": {
-      "description": "Cleaning the room in the morning",
-      "periodicity": "weekly",
-      "streaks": [
-        {
-          "start_date": "2024-04-20",
-          "end_date": "2024-04-24"
-        }
-      ]
-    },
-    "Making Coffee in the morning": {
-      "description": "Making a cup of hot coffee in the morning",
-      "periodicity": "daily",
-      "streaks": []
-    },
-    "Checking the cat for lice": {
-      "description": "Checking the cat's hair for lice in the morning",
-      "periodicity": "daily",
-      "streaks": []
-    },
-    "Exercise in the morning": {
-      "description": "Daily morning exercise",
-      "periodicity": "daily",
-      "streaks": [
-        {
-          "start_date": "2024-05-02",
-          "end_date": "2024-05-02"
-        }
-      ]
-    },
-    "Meditation": {
-      "description": "meditating for an hour everyday",
-      "periodicity": "daily",
-      "streaks": []
-    },
-    "Feeding the Dog 3x a Day": {
-      "description": "feed andi three times a day",
-      "periodicity": "daily",
-      "streaks": [
-        {
-          "start_date": "2024-04-25",
-          "end_date": "2024-04-25"
-        }
-      ]
-    },
-    "Visit the neighbour and talk to them": {
-      "description": "just visit hannah for a bit, and say hi",
+    "Having Amazing Meal": {
+      "description": "Having an amazing meal once a week",
       "periodicity": "weekly",
       "streaks": [
         {
           "start_date": "2024-04-22",
-          "end_date": "2024-04-28"
+          "end_date": "2024-05-19"
+        },
+        {
+          "start_date": "2024-05-27",
+          "end_date": "2024-06-02"
         }
       ]
     },
-    "Example Brushing Teeth 2": {
-      "description": "Example Brushing Teeth",
+    "Brushing teeth everyday": {
+      "description": "Brushing teeth in the morning everyday",
       "periodicity": "daily",
-      "streaks": []
+      "streaks": [
+        {
+          "start_date": "2024-04-25",
+          "end_date": "2024-04-27"
+        },
+        {
+          "start_date": "2024-04-29",
+          "end_date": "2024-05-26"
+        }
+      ]
+    },
+    "Meditation": {
+      "description": "Meditating in the morning everyday",
+      "periodicity": "daily",
+      "streaks": [
+        {
+          "start_date": "2024-04-25",
+          "end_date": "2024-04-27"
+        },
+        {
+          "start_date": "2024-04-29",
+          "end_date": "2024-05-26"
+        }
+      ]
+    },
+    "Morning Walk": {
+      "description": "Going for a morning walk",
+      "periodicity": "daily",
+      "streaks": [
+        {
+          "start_date": "2024-04-25",
+          "end_date": "2024-04-27"
+        },
+        {
+          "start_date": "2024-04-29",
+          "end_date": "2024-05-26"
+        }
+      ]
+    },
+    "Watering The Cactus": {
+      "description": "Watering the cactus once a week",
+      "periodicity": "weekly",
+      "streaks": [
+        {
+          "start_date": "2024-04-22",
+          "end_date": "2024-05-19"
+        },
+        {
+          "start_date": "2024-05-27",
+          "end_date": "2024-06-02"
+        }
+      ]
     }
   }
 }

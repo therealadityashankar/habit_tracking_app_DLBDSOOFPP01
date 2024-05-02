@@ -8,6 +8,7 @@ ctr ,'`,-__.-.``=._    _.=``,-.__-.`'.
 
 -----
 ascii dolphins are asking you to keep your habits together!
+ascii art from : https://www.asciiart.eu/
 -----
 """
 
@@ -18,7 +19,8 @@ ascii_cat = """
 (@)<_____>__(_____)____/
 
 -----
-The ascii believes that you can follow your goals!
+The ascii cat believes that you can follow your goals!
+ascii art from : https://www.asciiart.eu/
 -----
 """
 
@@ -31,6 +33,7 @@ Max   /\
 
 -----
 All the fish wish you the best
+ascii art from : https://www.asciiart.eu/
 -----
 """
 
@@ -48,6 +51,7 @@ jgs  /  ``'._-''-_.'``  \
 
 ---
 The ascii bear says you shall not fear!
+ascii art from : https://www.asciiart.eu/
 ---
 """
 
@@ -59,5 +63,6 @@ o'')}____//
 
 ---
 The ascii dog, asks you to be kind to yourself
+ascii art from : https://www.asciiart.eu/
 ---
 """

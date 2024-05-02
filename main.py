@@ -15,7 +15,7 @@ def main():
 
     # print an ascii image
     ascii_images = [ascii_art.ascii_bear, ascii_art.ascii_cat, ascii_art.ascii_dog, ascii_art.ascii_dolphin, ascii_art.ascii_fish]
-    print(random.choice([ascii_images])[0])
+    print(random.choice(ascii_images))
 
     habits_and_streaks = data.load_all_data() # load all json data
 
