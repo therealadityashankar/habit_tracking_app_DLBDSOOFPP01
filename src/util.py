@@ -28,33 +28,79 @@ def get_yesterday_date():
     This is a convinience function to get yesterday's date
     """
     return get_current_date() - datetime.timedelta(days=1)
-    
+
 def ask_current_date():
     """
-    asks the current date, useful for testing
+    Asks for the current date with input validation.
     """
-    print("you're currently in test mode")
+    print("You're currently in test mode")
     print("-----------------------------")
-    current_year  = int(input("Enter the current year : "))
-    current_month = int(input("Enter the current month : "))
-    current_day   = int(input("Enter the current day : "))
-    date = datetime.date(year=current_year, month=current_month, day=current_day)
+
+    # Helper function to get an integer input with a custom prompt
+    def get_int_input(prompt):
+        while True:
+            try:
+                value = int(input(prompt))
+                return value
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
+
+    # Get valid year, ensuring it's within a reasonable range
+    while True:
+        current_year = get_int_input("Enter the current year (e.g., 2024): ")
+        if 1900 <= current_year <= 2100:
+            break
+        else:
+            print("Year must be between 1900 and 2100. Please try again.")
+
+    # Get valid month, ensuring it's between 1 and 12
+    while True:
+        current_month = get_int_input("Enter the current month (e.g., 04): ")
+        if 1 <= current_month <= 12:
+            break
+        else:
+            print("Month must be between 1 and 12. Please try again.")
+
+    # Get valid day, ensuring it's valid for the given year and month
+    while True:
+        current_day = get_int_input("Enter the current day (e.g., 06): ")
+        try:
+            date = datetime.date(year=current_year, month=current_month, day=current_day)
+            break
+        except ValueError:
+            print("Invalid day for the given month and year. Please try again.")
+
     print("-----------------------------")
     print(f"retrieved date is {date}")
     return date
-    
 
 
-def input_choice(choice_prompt : str):
+
+def input_choice(choice_prompt : str, constrain : list[str]):
     """
     adds a prompt, then asks the user for a choice to add, then returns it
 
+    Parameters
+    ----------
+
+    choice_prompt,
+        the prompt to be asked
+
+    constrain,
+        the valid options as a response
+    
     returns
     -------
     str
     """
     print(choice_prompt)
-    return input("choice : ")
+    val = input("choice : ")
+
+    while val not in constrain:
+        print("invalid choice, try again, choice must be in ", constrain)
+        val = input("choice :")
+
+    return val
 
 def pretty_print_habits_and_analytics(habits : list[tuple[Habit, list[Streak]]]):
     """
@@ -140,7 +186,7 @@ def create_new_habit(habits_and_streaks : list[tuple[Habit, list[Streak]]]):
     """
     habit = input("Enter habit name: ")
     description = input("Enter a description for the habit: ")
-    periodicity_option = input_choice(prompts.CHOICE_DAILY_OR_WEEKLY_TASK)
+    periodicity_option = input_choice(prompts.CHOICE_DAILY_OR_WEEKLY_TASK, constrain=["a", "b"])
 
     if periodicity_option == 'a':
         periodicity = 'daily'
@@ -164,10 +210,25 @@ def update_habit(habits_and_streaks : list[tuple[Habit, list[Streak]]]):
         print(f"{i + 1}: {habit.name} - {habit.description}")
 
     print()
-    habit_num = input("Enter a number corresponding to the habit to modify: ")
-    habit_num = int(habit_num) - 1
+    while True:
+        # Get user input
+        habit_num = input("Enter a number corresponding to the habit to modify: ")
+        
+        try:
+            # Convert to integer and adjust for zero-based index
+            habit_index = int(habit_num) - 1
 
-    habit, _ = habits_and_streaks[habit_num]
+            # Check if the index is within the valid range
+            if not(0 <= habit_index < len(habits_and_streaks)):
+                print("Invalid index. Please enter a number within the correct range.")
+            else:
+                break
+
+        except ValueError:
+            # If the input is not a valid integer
+            print("Invalid input. Please enter a valid number.")
+
+    habit, _ = habits_and_streaks[habit_index]
 
     print("----------------")
     print("Enter new habit name:")
@@ -198,10 +259,26 @@ def delete_habit(habits_and_streaks : list[tuple[Habit, list[Streak]]]):
         print(f"{i + 1}: {habit.name} - {habit.description}")
 
     print()
-    habit_num = input("Enter a number corresponding to the habit to delete: ")
-    habit_num = int(habit_num) - 1
 
-    del habits_and_streaks[habit_num]
+    while True:
+        # Get user input
+        habit_num = input("Enter a number corresponding to the habit to delete: ")
+        
+        try:
+            # Convert to integer and adjust for zero-based index
+            habit_index = int(habit_num) - 1
+
+            # Check if the index is within the valid range
+            if not(0 <= habit_index < len(habits_and_streaks)):
+                print("Invalid index. Please enter a number within the correct range.")
+            else:
+                break
+
+        except ValueError:
+            # If the input is not a valid integer
+            print("Invalid input. Please enter a valid number.")
+
+    del habits_and_streaks[habit_index]
 
     print()
     print("successfully deleted!")
@@ -262,10 +339,26 @@ def mark_habit_as_complete(habits_and_streaks : list[tuple[Habit, list[Streak]]]
         print(f"{i + 1}: ({habit.periodicty}) {habit.name} - {habit.description} {suffix_text}")
 
     print()
-    habit_num = input("Enter a number corresponding to the habit to mark as complete for today: ")
-    habit_num = int(habit_num) - 1
+    
+    while True:
+        # Get user input
+        habit_num = input("Enter a number corresponding to the habit to mark as complete for today: ")
+        
+        try:
+            # Convert to integer and adjust for zero-based index
+            habit_index = int(habit_num) - 1
 
-    habit, streaks = habits_and_streaks[habit_num]
+            # Check if the index is within the valid range
+            if not(0 <= habit_index < len(habits_and_streaks)):
+                print("Invalid index. Please enter a number within the correct range.")
+            else:
+                break
+
+        except ValueError:
+            # If the input is not a valid integer
+            print("Invalid input. Please enter a valid number.")
+
+    habit, streaks = habits_and_streaks[habit_index]
 
     # if streaks is empty,
     # or if the last streak day is a day before yesterday

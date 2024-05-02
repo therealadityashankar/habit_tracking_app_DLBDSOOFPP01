@@ -21,7 +21,7 @@ def main():
 
     # ask the user if they would like to view or modify their data
 
-    option = util.input_choice(prompts.CHOICE_VIEW_OR_MODIFY) 
+    option = util.input_choice(prompts.CHOICE_VIEW_OR_MODIFY, constrain=["a", "b"]) 
 
     if option == "a":
         print(prompts.HABITS_PRE)
@@ -30,16 +30,16 @@ def main():
     if option == "b":
         # the user chooses if they would like to mark their current habits as complete
         # or modify their current habits
-        mark_or_edit_option = util.input_choice(prompts.CHOICE_MARK_OR_MODIFY)
+        mark_or_edit_option = util.input_choice(prompts.CHOICE_MARK_OR_MODIFY, constrain=["a", "b"])
 
         if mark_or_edit_option == "a":
             mark_another_option = True
             while mark_another_option:
                 util.mark_habit_as_complete(habits_and_streaks)
-                mark_another_option = util.input_choice(prompts.CHOICE_MARK_ANOTHER) == 'a'
+                mark_another_option = util.input_choice(prompts.CHOICE_MARK_ANOTHER, constrain=["a", "b"]) == 'a'
 
         elif mark_or_edit_option == "b":
-            cud_option = util.input_choice(prompts.CHOICE_CREATE_UPDATE_DELETE)
+            cud_option = util.input_choice(prompts.CHOICE_CREATE_UPDATE_DELETE, constrain=["a", "b", "c"])
 
             if cud_option == "a":
                 util.create_new_habit(habits_and_streaks) # create a new habit

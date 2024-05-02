@@ -131,9 +131,30 @@ class TestWateringCactus(unittest.TestCase):
     ensure that each step is functioning properly
     """
     @classmethod
+    def setUpClass(cls):
+        """
+        Create '.testmode' file if it does not exist.
+        """
+        cls.testmode_file = ".testmode"
+        cls.testfile_existed_before = True
+
+        if not os.path.exists(cls.testmode_file):
+            cls.testfile_existed_before = False
+            
+            with open(cls.testmode_file, "w") as f:
+                f.write("Test mode is active.")
+    
+    @classmethod
     def tearDownClass(cls) -> None:
+        """
+        and delete .testmode if the file did not exist before
+        """
         with open(os.path.join(parent_directory, "data.json"), "w") as f:
-            json.dump({"habits":habits}, f)
+            json.dump({"habits":habits}, f, indent=2)
+
+        if os.path.exists(cls.testmode_file) and not cls.testfile_existed_before:
+            os.remove(cls.testmode_file)
+
 
     def step1_habit_creation_weekly_test(self):
         """
