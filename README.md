@@ -16,6 +16,8 @@ this codebase uses no external libraries
 
 ### Direct usage guidelines
 
+**for testing**, I would highly recommend the use of the ".testmode" file, this is present by default, deleting it would enable the app in production mode, but the .testmode file ensure that the user enters the current date everytime they use the application
+
 1. Usage of the app is extremely simple, and it can directly be used via calling `python main.py`
 2. Since the app has no external dependencies, no pip installation is required (only python libraries are used here!)
 
